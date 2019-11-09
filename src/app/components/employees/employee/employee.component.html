@@ -1,1 +1,50 @@
-<p>employee works!</p>
+<h1 class='display-4'>Employee register</h1>
+<form #form='ngForm' autocomplete='off'>
+  <div class='form-group'>
+    <label>First Name</label>
+    <input
+      type='text'
+      name='fullName'
+      #fullName='ngModel'
+      [(ngModel)]='employeeService.formData.fullName'
+      class='form-control'
+      placeholder='Full name'>
+  </div>
+  <div class='form-group'>
+    <label>Position</label>
+    <input
+      type='text'
+      name='position'
+      #position='ngModel'
+      [(ngModel)]='employeeService.formData.position'
+      class='form-control'
+      placeholder='Position'>
+  </div>
+  <div class='form-row'>
+    <div class='form-group col-md-6'>
+      <label>Employee code</label>
+      <input
+        type='text'
+        name='empCode'
+        #empCode='ngModel'
+        [(ngModel)]='employeeService.formData.empCode'
+        class='form-control'
+        placeholder='Emp code'>
+    </div>
+    <div class='form-group col-md-6'>
+      <label>Mobile number</label>
+      <input
+        type='text'
+        name='mobileNumber'
+        #mobileNumber='ngModel'
+        [(ngModel)]='employeeService.formData.mobileNumber'
+        class='form-control'
+        placeholder='Mobile number'>
+    </div>
+  </div>
+  <div class='form-group'>
+    <button type='submit' class='btn btn-lg btn-block btn-info'>
+      Add employee
+    </button>
+  </div>
+</form>

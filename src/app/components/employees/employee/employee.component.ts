@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+import { EmployeeService } from '../../../services/employee.service';
 
 @Component({
   selector: 'app-employee',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
+    this.employeeService.formData = {
+      id: null,
+      fullName: '',
+      position: '',
+      empCode: '',
+      mobileNumber: ''
+    };
   }
+  resetForm(form?: NgForm) {
+    if (form !== null) {
+      form.resetForm();
+    }
 
+  }
 }
