@@ -9,6 +9,9 @@
       [(ngModel)]='employeeService.formData.fullName'
       class='form-control'
       placeholder='Full name'>
+    <div *ngIf='fullName.touched && fullName.invalid' class='validation-error'>
+      This field is required
+    </div>
   </div>
   <div class='form-group'>
     <label>Position</label>
