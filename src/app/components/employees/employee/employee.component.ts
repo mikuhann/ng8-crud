@@ -13,6 +13,12 @@ export class EmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
+    this.resetForm();
+  }
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.resetForm();
+    }
     this.employeeService.formData = {
       id: null,
       fullName: '',
@@ -20,11 +26,5 @@ export class EmployeeComponent implements OnInit {
       empCode: '',
       mobileNumber: ''
     };
-  }
-  resetForm(form?: NgForm) {
-    if (form !== null) {
-      form.resetForm();
-    }
-
   }
 }
