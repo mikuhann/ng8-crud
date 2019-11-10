@@ -14,6 +14,6 @@ export class EmployeeService {
     private firestore: AngularFirestore
   ) { }
   getEmployees() {
-    this.firestore.collection(employees).snapshotChanges();
+    return this.firestore.collection(employees).snapshotChanges();
   }
 }
