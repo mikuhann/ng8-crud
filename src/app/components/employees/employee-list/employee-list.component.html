@@ -8,12 +8,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='let employee of list' (click)='onEdit(employee)'>
-      <td>{{employee.empCode}} - {{employee.fullName}}</td>
-      <td>{{employee.position}}</td>
-      <td>{{employee.mobileNumber}}</td>
+    <tr *ngFor='let employee of list'>
+      <td (click)='onEdit(employee)'>{{employee.empCode}} - {{employee.fullName}}</td>
+      <td (click)='onEdit(employee)'>{{employee.position}}</td>
+      <td (click)='onEdit(employee)'>{{employee.mobileNumber}}</td>
       <td>
-        <button class='btn text-danger'><i class='fa fa-trash'></i></button>
+        <button (click)='onDelete(employee.id)' class='btn text-danger'><i class='fa fa-trash'></i></button>
       </td>
     </tr>
   </tbody>
