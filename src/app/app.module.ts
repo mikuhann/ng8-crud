@@ -29,7 +29,9 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

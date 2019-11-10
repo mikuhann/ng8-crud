@@ -36,9 +36,14 @@ export class EmployeeComponent implements OnInit {
     };
   }
   onSubmit(form: NgForm) {
-    const data = form.value;
-    this.firestore.collection(employees).add(data);
+    const {id, ...data} = form.value;
+    if (form.value.id == null) {
+      this.firestore.collection(employees).add(data);
+      this.toastr.success('Employee added');
+    } else {
+      this.firestore.doc(`${employees}/${id}`).update(data);
+      this.toastr.success('Employee updated');
+    }
     this.resetForm(form);
-    this.toastr.success('Employee added');
   }
 }

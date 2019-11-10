@@ -26,5 +26,7 @@ export class EmployeeListComponent implements OnInit {
       });
     });
   }
-
+  onEdit(employee: Employee) {
+    this.employeeService.formData = Object.assign({}, employee);
+  }
 }

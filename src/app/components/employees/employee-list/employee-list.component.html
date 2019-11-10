@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='let employee of list'>
+    <tr *ngFor='let employee of list' (click)='onEdit(employee)'>
       <td>{{employee.empCode}} - {{employee.fullName}}</td>
       <td>{{employee.position}}</td>
       <td>{{employee.mobileNumber}}</td>
